@@ -1,0 +1,169 @@
+ <!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ポートフォリオ - Web Developer</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">MyPortfolio</div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">スキル</a></li>
+                    <li><a href="portfolio">製作物</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ヒーローセクション -->
+         <section class="hero" id="home">
+            <h1>Web Developer</h1>
+            <p>システム開発・保守・改修の経験を活かして、より良いサービスを創造します</p>
+            <a href="#contact" class="cta-button">お問い合わせ</a>
+         </section>
+
+         <!-- Aboutセクション -->
+         <section class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>はじめまして、SESでWeb系システム・アプリケーションの開発・保守・改修に携わっているエンジニアです。</p>
+                    <p>日々の業務で培った経験を個人の活動に活かし、1人でも多くの方に知って使っていただける、価値のあるWebサービスの開発を目指して活動していきます。</p>
+                    <p>このポートフォリオページサイトをはじめ、様々なプロダクトを発信・共有していきたいと思います。</p>
+                </div>
+                <div class="portfolio-image">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+         </section>
+
+         <!-- スキルセクション-->
+          <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>HTML/CSS</h3>
+                    <p>レスポンシブデザインに対応したWebページの構築</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>productiveかつefficientなフロントエンドの実装</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="70"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-java"></i>
+                    <h3>Java</h3>
+                    <p>オブジェクト指向を活用したアプリケーション機能の実装</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="75"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>データベース(SQL)</h3>
+                    <p>効率的なデータ管理とクエリの構築</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="65"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>レスポンシブ</h3>
+                    <p>様々なデバイスに対応したデザイン</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+          <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>プロジェクト 1</h3>
+                        <p>金融機関の発注管理及び金融データ管理システムの運用・保守開発を担当</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">ExcelVBA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>プロジェクト 2</h3>
+                        <p>エネルギー会社の顧客向けサイト・アプリケーションの開発・保守を担当</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">SpringBoot</span>
+                            <span class="tag">React</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">保守</span>
+                            <span class="tag">改修</span>
+                            <span class="tag">新規機能追加</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+          <!-- お問い合わせセクション -->
+          <section id="contact">
+            <h2>Contact</h2>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error" id="nameError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message">問い合わせ内容</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <div class="error" id="messageError"></div>
+                </div>
+                <button type="button" id="submit-button">送信</button>
+            </form>
+          </section>
+
+          <footer>
+            <div class="social-links">
+                <a href="git@github.com:yoshi0826taka/my-portfolio.git" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="git@github.com:yoshi0826taka/weight_log.git" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://note.com/wani_no_biboroku" target="_blank"><i class="fas fa-note"></i></a>
+            </div>
+            <p>&copy; 2024 MyPortfolio. All rights reserved.</p>
+          </footer>
+
+          <script src="js/main.js"></script>
+    </body>
+</html>
