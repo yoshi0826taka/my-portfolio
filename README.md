@@ -1,63 +1,128 @@
-
 # My Portfolio
 
-このリポジトリは個人用の静的ポートフォリオサイトです。HTML/CSS/JavaScript を使ったフロントエンドのみで構成され、以下の要素を持ちます。
+このリポジトリは個人用の **React ベース** ポートフォリオサイトです。React + Vite を使ったモダンなフロントエンド構成で、以下の要素を持ちます。
 
 - 自己紹介（About）
-- スキル（Skills）
+- スキル（Skills）- アニメーション対応
 - 製作物（Portfolio）
-- 問い合わせフォーム（ローカルでは送信機能はありません）
+- 問い合わせフォーム（フロントエンドバリデーション）
+
+## 技術スタック
+
+- **React 18** - UI フレームワーク
+- **Vite** - 開発サーバ・ビルドツール
+- **CSS** - スタイリング（レスポンシブ対応）
 
 ## 必要なもの
-- Web ブラウザ（Chrome / Safari 等）
-- 任意でローカル HTTP サーバ（Python や Node の簡易サーバ）
+
+- Node.js 16+ および npm / yarn
+- Web ブラウザ（最新版推奨）
 
 ## ファイル構成
+
 ```
 my-portfolio/
-├─ index.html        # サイト本体
-├─ css/
-│  └─ style.css     # スタイル
-├─ js/
-│  └─ main.js       # フロントエンド用スクリプト
-└─ images/           # 画像（任意）
+├─ index.html           # エントリーポイント
+├─ src/
+│  ├─ App.jsx          # メインアプリケーション
+│  ├─ main.jsx         # React ルート
+│  ├─ components/
+│  │  ├─ Header.jsx
+│  │  ├─ Hero.jsx
+│  │  ├─ About.jsx
+│  │  ├─ Skills.jsx
+│  │  ├─ Portfolio.jsx
+│  │  ├─ Contact.jsx
+│  │  └─ Footer.jsx
+│  └─ styles/
+│     └─ index.css
+├─ public/              # 静的資産（任意）
+├─ vite.config.js       # Vite 設定
+└─ package.json
 ```
 
-## ローカルで確認する手順
-1. このプロジェクトのルートに移動します:
+## セットアップと実行
+
+### 1. 依存パッケージのインストール
+
 ```bash
-cd /path/to/my-portfolio
+npm install
 ```
-2. 簡易サーバを立ててブラウザで確認します（推奨）。Python の場合:
+
+### 2. 開発サーバの起動
+
 ```bash
-python3 -m http.server 8000
-# ブラウザで http://localhost:8000 を開く
+npm run dev
 ```
-または Node の `http-server` を使う場合:
+
+ブラウザで `http://localhost:3000` を開くと、ホットリロード対応の開発環境が立ち上がります。
+
+### 3. 本番ビルド
+
 ```bash
-npx http-server -c-1
+npm run build
 ```
+
+`dist/` ディレクトリに最適化されたビルドが生成されます。
+
+### 4. ビルド結果のプレビュー
+
+```bash
+npm run preview
+```
+
+## 機能
+
+- ✅ **ハンバーガーメニュー** - レスポンシブナビゲーション
+- ✅ **スムーススクロール** - セクション間の滑らかな移動
+- ✅ **スキルバーアニメーション** - Intersection Observer を活用
+- ✅ **フォームバリデーション** - React state で管理
+- ✅ **レスポンシブデザイン** - タブレット・スマートフォン対応
 
 ## VS Code で Markdown プレビューをサイドに出す方法
+
 1. `README.md` を開く
 2. コマンドパレット（Mac: `Cmd+Shift+P`）で `Markdown: Open Preview to the Side` を実行
-3. もしくはファイルを開いた状態で `Cmd+K`、次に `V` を押す（環境により動作が異なることがあります）
+3. もしくはファイルを開いた状態で `Cmd+K` その後 `V` を押す
 
-## 修正済みの問題点（このリポジトリで対応済み）
-- `index.html` のスタイル参照を `css/style.css` に修正しました。
-- `js/main.js` に含まれていた Node 向けの `require` を削除し、ブラウザ向けに安全な DOM チェックとフォーム処理を実装しました。
-- 問い合わせフォームの ID をスクリプト側で `contact-form` に合わせ、送信ボタン（`#submit-button`）でバリデーションを実行するようにしました。
+## デプロイ
 
-## 変更したくないけれど注意が必要な点
-- 問い合わせフォームは現在フロントエンドでのバリデーションとアラート表示のみです。実際にメール送信や保存を行うにはバックエンド（フォーム送信 API）を用意してください。
+### GitHub Pages でホスティング
 
-## 今後の改善案（任意）
-- GitHub Pages や Netlify でのホスティング手順と CI を追加
-- フォームを Netlify Forms / Formspree 等に連携して実運用化
-- スクリーンショットやデモ GIF を `README.md` に追加
+1. `vite.config.js` に以下を追加:
+```javascript
+export default {
+  base: '/my-portfolio/',
+  // ... 其他設定
+}
+```
+
+2. デプロイ用スクリプトをセットアップ（GitHub Actions など）
+
+### Netlify / Vercel
+
+1. `npm run build` でビルド
+2. `dist/` ディレクトリをアップロード
+3. 環境に応じて自動デプロイを設定
+
+## 注意点
+
+- 問い合わせフォームは現在フロントエンドのバリデーション・UI のみです。メール送信機能を追加するには、バックエンド API の構築や Netlify Forms / Formspree などの外部サービス利用を検討してください。
+- 本番環境ではソースマップの生成を無効化してください（vite.config.js を参照）。
+
+## 今後の改善案
+
+- Tailwind CSS の導入でスタイル管理を効率化
+- TypeScript への移行で型安全性を確保
+- フォーム送信機能（バックエンド連携）
+- ページネーション・無限スクロール対応
+- ダークモード対応
+- SEO 最適化（React Helmet など）
 
 ## 作者
+
 - yoshi0826taka
 
 ---
-他に追加したい情報（デプロイ手順、スクリーンショット、ライセンス等）があれば教えてください。
+
+質問やご提案があればお気軽にどうぞ！
