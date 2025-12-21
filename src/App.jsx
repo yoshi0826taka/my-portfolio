@@ -10,7 +10,7 @@ import './styles/index.css'
 
 function App() {
   React.useEffect(() => {
-    console.log('App component mounted successfully')
+    console.log('App component mounted - v2')
   }, [])
 
   return (
