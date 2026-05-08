@@ -9,10 +9,6 @@ import Footer from './components/Footer'
 import './styles/index.css'
 
 function App() {
-  React.useEffect(() => {
-    console.log('App component mounted - v2')
-  }, [])
-
   return (
     <>
       <Header />

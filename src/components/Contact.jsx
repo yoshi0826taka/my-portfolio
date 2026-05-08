@@ -44,6 +44,7 @@ export default function Contact() {
   return (
     <section id="contact">
       <h2>Contact</h2>
+      <p className="section-lead">GitHubの制作物や学習内容についてのご連絡はこちらからお願いします。</p>
       <form className="contact-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">お名前</label>

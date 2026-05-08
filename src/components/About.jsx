@@ -6,12 +6,29 @@ export default function About() {
       <h2>About Me</h2>
       <div className="about-content">
         <div className="about-text">
-          <p>はじめまして、SESでWeb系システム・アプリケーションの開発・保守・改修に携わっているエンジニアです。</p>
-          <p>日々の業務で培った経験を個人の活動に活かし、1人でも多くの方に知って使っていただける、価値のあるWebサービスの開発を目指して活動していきます。</p>
-          <p>このポートフォリオページサイトをはじめ、様々なプロダクトを発信・共有していきたいと思います。</p>
+          <p>
+            SESでWeb系システム・アプリケーションの開発、保守、改修に携わっています。既存コードを読み解き、影響範囲を考えながら改善する経験を、個人開発でも再現できるように取り組んでいます。
+          </p>
+          <p>
+            現在はJava、Spring Boot、Servlet/JSP、React、MySQLを中心に、ログイン認証、CRUD、DTO設計、DB連携、APIドキュメント化までを一つずつ成果物に落とし込んでいます。
+          </p>
+          <p>
+            このサイトでは、学習内容だけでなく「何を作り、どこを工夫し、次に何を改善するか」が伝わるように公開しています。
+          </p>
         </div>
-        <div className="profile-image">
-          <i className="fas fa-user"></i>
+        <div className="about-summary">
+          <div>
+            <strong>得意領域</strong>
+            <span>業務系Webアプリ、DB連携、保守改修</span>
+          </div>
+          <div>
+            <strong>学習中</strong>
+            <span>Spring Security、テスト設計、CI/CD</span>
+          </div>
+          <div>
+            <strong>重視していること</strong>
+            <span>再現できるREADME、読みやすい構成、改善履歴</span>
+          </div>
         </div>
       </div>
     </section>
